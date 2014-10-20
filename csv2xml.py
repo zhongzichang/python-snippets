@@ -49,7 +49,11 @@ def gen_xml(csv_name, xml_file):
 	# print reader.fieldnames
 
 	root = ET.Element('root')
+        rowIndex = 0
 	for row in reader:
+                rowIndex+=1
+                if (rowIndex == 1):
+                        continue
 		node = ET.SubElement(root, 'value')
 		for col in reader.fieldnames:
 			# val = row[col].decode("gbk")
